@@ -87,9 +87,13 @@ syn match   csCharacter         "'[^']*'" contains=csSpecialChar,csSpecialCharEr
 syn match   csCharacter         "'\\''" contains=csSpecialChar
 syn match   csCharacter         "'[^\\]'"
 syn match   csNumber            "\<\(0[0-7]*\|0[xX]\x\+\|\d\+\)[lL]\=\>"
-syn match   csNumber            "\(\<\d\+\.\d*\|\.\d\+\)\([eE][-+]\=\d\+\)\=[fFdD]\="
-syn match   csNumber            "\<\d\+[eE][-+]\=\d\+[fFdD]\=\>"
-syn match   csNumber            "\<\d\+\([eE][-+]\=\d\+\)\=[fFdD]\>"
+syn match   csNumber            "\(\<\d\+\.\d*\|\.\d\+\)\([eE][-+]\=\d\+\)\=[dD]\="
+syn match   csNumber            "\<\d\+[eE][-+]\=\d\+[dD]\=\>"
+syn match   csNumber            "\<\d\+\([eE][-+]\=\d\+\)\=[dD]\>"
+syn match   csFloat              "\d\+f"
+syn match   csFloat              "\d\+\.\d*\(e[-+]\=\d\+\)\=[fl]\="
+syn match   csFloat              "\.\d\+\(e[-+]\=\d\+\)\=[fl]\=\>"
+syn match   csFloat              "\d\+e[-+]\=\d\+[fl]\=\>"
 
 " The default highlighting.
 hi def link csType                      Type
@@ -132,6 +136,7 @@ hi def link csPreCondit                 PreCondit
 hi def link csCharacter                 Character
 hi def link csSpecialChar               SpecialChar
 hi def link csNumber                    Number
+hi def link csFloat                     Float
 hi def link csUnicodeNumber             SpecialChar
 hi def link csUnicodeSpecifier          SpecialChar
 
